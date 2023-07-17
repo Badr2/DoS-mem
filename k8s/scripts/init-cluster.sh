@@ -1,5 +1,7 @@
 #!/bin/bash
 
+minikube delete && minikube start --cpus=6 --memory=10000 --disk-size=25g --namespace=k8s-bigdata
+
 . "$(dirname "$0")/functions.sh"
 
 RED='\033[0;31m'
@@ -41,7 +43,7 @@ sleep 10
 #add_host datanodes
 #add_host resourcemanager
 set_benchmark_input_size $INPUT_SIZE
-set_executor_memory "2g"
+set_executor_memory "15g"
 set_executor_cores "4"
 
 #########################

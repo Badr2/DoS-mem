@@ -153,6 +153,13 @@ spec:
     envFrom:
     - configMapRef:
         name: hadoop-env
+    resources:
+      requests:
+        cpu: "500m"
+        memory: "1Gi"
+      limits:
+        cpu: "3"
+        memory: "2Gi"
     ports:
       - containerPort: 9870
       - containerPort: 9000
@@ -200,6 +207,13 @@ spec:
           envFrom:
           - configMapRef:
               name: hadoop-env
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "2"
+              memory: "2Gi"
           volumeMounts:
             - mountPath: /hadoop/dfs/data
               name: vol 
@@ -241,6 +255,13 @@ spec:
       envFrom:
       - configMapRef:
           name: hadoop-env
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "1Gi"
+        limits:
+          cpu: "2"
+          memory: "2Gi"
       ports:
         - containerPort: 8088
         - containerPort: 8031
@@ -272,6 +293,13 @@ spec:
       envFrom:
       - configMapRef:
           name: hadoop-env
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "1Gi"
+        limits:
+          cpu: "2"
+          memory: "2Gi"
       ports:
         - containerPort: 8188
         - containerPort: 19888
