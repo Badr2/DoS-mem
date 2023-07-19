@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-01
+spec:
+  nodeName: minikube
+  containers:
+  - name: docker-container
+    image: ubuntu
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-02
+spec:
+  nodeName: minikube
+  containers:
+  - name: docker-container
+    image: ubuntu
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-11
+spec:
+  nodeName: minikube-m02
+  containers:
+  - name: docker-container
+    image: ubuntu
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-12
+spec:
+  nodeName: minikube-m02
+  containers:
+  - name: docker-container
+    image: ubuntu
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
